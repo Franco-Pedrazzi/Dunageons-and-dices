@@ -1,0 +1,16 @@
+.import/
+.export/
+export_presets.cfg
+
+# Mono / C#
+.mono/
+data_*/
+
+# builds
+build/
+bin/
+obj/
+
+# OS
+.DS_Store
+Thumbs.db
