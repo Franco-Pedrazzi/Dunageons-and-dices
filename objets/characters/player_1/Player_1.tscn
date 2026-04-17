@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://btivbbu768a6h"]
+
+[ext_resource type="PackedScene" uid="uid://vvi3dl873o2" path="res://objets/characters/player_1/player_1_hands.tscn" id="1_1umfy"]
+[ext_resource type="Script" uid="uid://dqmknucgeodex" path="res://objets/characters/player_1/player_1.gd" id="1_6eagr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6eagr"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_6eagr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_6eagr")
+
+[node name="Player_1_hands" parent="." instance=ExtResource("1_1umfy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.490345, 0)
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.490345, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]

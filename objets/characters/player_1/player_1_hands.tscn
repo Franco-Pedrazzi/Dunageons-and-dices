@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://vvi3dl873o2"]
+
+[ext_resource type="Texture2D" uid="uid://cteev4shp641o" path="res://assets/2d/characters/player_1/hands.png" id="1_3lsv6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lsv6"]
+atlas = ExtResource("1_3lsv6")
+region = Rect2(0, 400, 1120, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ky56"]
+atlas = ExtResource("1_3lsv6")
+region = Rect2(0, 0, 1120, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vf6xt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lsv6")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ky56")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player_1_hands" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -203.0
+offset_right = 18.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="hands" type="AnimatedSprite2D" parent="CanvasLayer/Control"]
+position = Vector2(-19, 2)
+sprite_frames = SubResource("SpriteFrames_vf6xt")
+animation = &"attack"
+autoplay = "default"
