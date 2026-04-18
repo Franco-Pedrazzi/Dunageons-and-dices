@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://cunsqr2ana5lg"]
+
+[ext_resource type="Script" uid="uid://dpyl3o8h7uld8" path="res://objets/characters/npcs/npc_1/npc_1.gd" id="1_nsxg4"]
+[ext_resource type="Texture2D" uid="uid://yhmi8cvt5kcj" path="res://assets/2d/characters/Npcs/Npac_1.png" id="1_xfjbt"]
+[ext_resource type="Script" uid="uid://jmqgqgec8elw" path="res://objets/characters/States/State_Machine.gd" id="2_6xwwp"]
+[ext_resource type="Script" uid="uid://b1cefgyh8imtq" path="res://objets/characters/States/idle.gd" id="3_82tn7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsxg4"]
+atlas = ExtResource("1_xfjbt")
+region = Rect2(672, 0, 672, 672)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3855j"]
+atlas = ExtResource("1_xfjbt")
+region = Rect2(672, 2016, 672, 672)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnyas"]
+atlas = ExtResource("1_xfjbt")
+region = Rect2(672, 672, 672, 672)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqc5p"]
+atlas = ExtResource("1_xfjbt")
+region = Rect2(0, 2016, 672, 672)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg171"]
+atlas = ExtResource("1_xfjbt")
+region = Rect2(0, 672, 672, 672)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xwwp"]
+atlas = ExtResource("1_xfjbt")
+region = Rect2(32, 32, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g0hn"]
+atlas = ExtResource("1_xfjbt")
+region = Rect2(672, 1344, 672, 672)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og76e"]
+atlas = ExtResource("1_xfjbt")
+region = Rect2(0, 1344, 672, 672)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_og76e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsxg4")
+}],
+"loop": true,
+"name": &"Idle_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3855j")
+}],
+"loop": true,
+"name": &"Idle_diagonal_left_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnyas")
+}],
+"loop": true,
+"name": &"Idle_diagonal_left_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqc5p")
+}],
+"loop": true,
+"name": &"Idle_diagonal_rigth_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg171")
+}],
+"loop": true,
+"name": &"Idle_diagonal_rigth_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xwwp")
+}],
+"loop": true,
+"name": &"Idle_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g0hn")
+}],
+"loop": true,
+"name": &"Idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og76e")
+}],
+"loop": true,
+"name": &"Idle_rigth",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xfjbt"]
+
+[sub_resource type="Animation" id="Animation_nsxg4"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3855j"]
+_data = {
+&"idle": SubResource("Animation_nsxg4")
+}
+
+[node name="Npc_1" type="CharacterBody3D" unique_id=1313732846 groups=["Character"]]
+collision_layer = 5
+script = ExtResource("1_nsxg4")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1698405481]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_og76e")
+animation = &"Idle_diagonal_rigth_back"
+autoplay = "Idle_front"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1201591110]
+transform = Transform3D(1.49333, 0, 0, 0, 2.69123, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_xfjbt")
+
+[node name="StateMachine" type="Node3D" parent="." unique_id=1679187814 node_paths=PackedStringArray("starting_state")]
+script = ExtResource("2_6xwwp")
+starting_state = NodePath("Idle")
+metadata/_custom_type_script = "uid://jmqgqgec8elw"
+
+[node name="Idle" type="Node3D" parent="StateMachine" unique_id=1348556972]
+script = ExtResource("3_82tn7")
+metadata/_custom_type_script = "uid://dqhjrlllyyc6d"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1387869828]
+libraries/ = SubResource("AnimationLibrary_3855j")

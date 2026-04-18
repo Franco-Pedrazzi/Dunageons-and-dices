@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://btivbbu768a6h" path="res://objets/characters/player_1/Player_1.tscn" id="1_ofrpk"]
 [ext_resource type="Texture2D" uid="uid://c0qunocn58hop" path="res://icon.svg" id="2_p5ctn"]
-[ext_resource type="PackedScene" uid="uid://cunsqr2ana5lg" path="res://objets/characters/npcs/npc_1/Npc_1.tscn" id="3_p5ctn"]
+[ext_resource type="PackedScene" uid="uid://cunsqr2ana5lg" path="res://objets/characters/npcs/npc_1/character_body_3d.tscn" id="3_p5ctn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2dqb8"]
 sky_top_color = Color(0, 0.564741, 0.641404, 1)
@@ -42,6 +42,8 @@ environment = SubResource("Environment_rwms2")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, -46.6013, 328.72, 25.731)
 shadow_enabled = true
 
+[node name="CharacterBody3D" parent="." unique_id=127817993 instance=ExtResource("1_ofrpk")]
+
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1839097905]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.52121, 0)
 use_collision = true
@@ -51,7 +53,5 @@ size = Vector3(100, 1, 100)
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, -2.107, 0, 100, -9.20999e-08, -13.0868, 0.565325, -5.03083)
 sprite_frames = SubResource("SpriteFrames_hwgqy")
 
-[node name="Player_1" parent="." unique_id=127817993 instance=ExtResource("1_ofrpk")]
-
-[node name="Npc_1" parent="." unique_id=1313732846 instance=ExtResource("3_p5ctn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.586018, 0.57878995, -7.1430035)
+[node name="CharacterBody3D2" parent="." unique_id=553450678 instance=ExtResource("3_p5ctn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4.194267, -8)
