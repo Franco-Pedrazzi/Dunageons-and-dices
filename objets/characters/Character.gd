@@ -1,10 +1,12 @@
-extends CharacterBody3D
+extends Stats
 class_name Character
 
 @onready var stateMachine:StateMachine=$StateMachine
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite_3d: AnimatedSprite3D = $AnimatedSprite3D
 @onready var player=get_tree().get_first_node_in_group("Player")
+
+var body_rotated=0
 
 var directions_x = [
 	"rigth",
@@ -31,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	if angle < 0:
 		angle += TAU
 	
-	var segment = int(round(angle / (TAU / 8))+2) % 8
+	var segment = int(round(angle / (TAU / 8))+2-body_rotated) % 8
 
 	current_direction_x=directions_x[segment]
 	

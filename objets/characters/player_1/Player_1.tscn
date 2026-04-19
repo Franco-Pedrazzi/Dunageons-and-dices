@@ -2,13 +2,50 @@
 
 [ext_resource type="PackedScene" uid="uid://vvi3dl873o2" path="res://objets/characters/player_1/player_1_hands.tscn" id="1_1umfy"]
 [ext_resource type="Script" uid="uid://dqmknucgeodex" path="res://objets/characters/player_1/player_1.gd" id="1_6eagr"]
+[ext_resource type="Texture2D" uid="uid://dcu68xtcw3j7l" path="res://assets/2d/characters/player_1/player_1 idle.png" id="2_5o54v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq1qb"]
+atlas = ExtResource("2_5o54v")
+region = Rect2(64, 64, 640, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hq1qb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq1qb")
+}],
+"loop": true,
+"name": &"Idle_front",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6eagr"]
 height = 2.76319
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qndo4"]
+atlas = ExtResource("2_5o54v")
+region = Rect2(768, 64, 640, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ho2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qndo4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Player_1" type="CharacterBody3D" unique_id=1854145944 groups=["Character", "Player"]]
 collision_layer = 3
 script = ExtResource("1_6eagr")
+
+[node name="body" type="AnimatedSprite3D" parent="." unique_id=1822754529]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.28111207, 0, 0)
+sprite_frames = SubResource("SpriteFrames_hq1qb")
+animation = &"Idle_front"
+autoplay = "Idle_front"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1785798286]
 shape = SubResource("CapsuleShape3D_6eagr")
@@ -17,6 +54,11 @@ shape = SubResource("CapsuleShape3D_6eagr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.490345, 0)
 
 [node name="Head" type="Node3D" parent="." unique_id=664633962]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.786412, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.114, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1335010816]
+
+[node name="head" type="AnimatedSprite3D" parent="Head" unique_id=1242507685]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.017121792, -0.24950933, -0.0010261536)
+sprite_frames = SubResource("SpriteFrames_6ho2w")
+frame_progress = 0.75957716

@@ -131,11 +131,9 @@ shape = SubResource("BoxShape3D_xfjbt")
 [node name="StateMachine" type="Node3D" parent="." unique_id=1679187814 node_paths=PackedStringArray("starting_state")]
 script = ExtResource("2_6xwwp")
 starting_state = NodePath("Idle")
-metadata/_custom_type_script = "uid://jmqgqgec8elw"
 
 [node name="Idle" type="Node3D" parent="StateMachine" unique_id=1348556972]
 script = ExtResource("3_82tn7")
-metadata/_custom_type_script = "uid://dqhjrlllyyc6d"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1387869828]
 libraries/ = SubResource("AnimationLibrary_3855j")
