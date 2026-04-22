@@ -25,7 +25,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:stateMachine.process_frame(delta)
 
-func _physics_process(delta: float) -> void:
+func Character_physics_process(delta: float) -> void:
 	animated_sprite_3d.look_at(player.global_position, Vector3.UP)
 	
 	var angle = animated_sprite_3d.rotation.y

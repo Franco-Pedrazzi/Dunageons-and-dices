@@ -52,6 +52,7 @@ transform = Transform3D(100, 0, 0, 0, -4.37114e-06, -2.107, 0, 100, -9.20999e-08
 sprite_frames = SubResource("SpriteFrames_hwgqy")
 
 [node name="Player_1" parent="." unique_id=127817993 instance=ExtResource("1_ofrpk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5761584, 0)
 
 [node name="Npc_1" parent="." unique_id=1313732846 instance=ExtResource("3_p5ctn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.586018, 0.57878995, -7.1430035)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5707211, 0.5676658, -7.1267724)

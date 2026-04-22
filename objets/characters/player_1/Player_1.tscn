@@ -46,6 +46,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.28111207, 0, 0)
 sprite_frames = SubResource("SpriteFrames_hq1qb")
 animation = &"Idle_front"
 autoplay = "Idle_front"
+frame_progress = 0.9087541
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1785798286]
 shape = SubResource("CapsuleShape3D_6eagr")
@@ -59,6 +60,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.114, 0)
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1335010816]
 
 [node name="head" type="AnimatedSprite3D" parent="Head" unique_id=1242507685]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.017121792, -0.24950933, -0.0010261536)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.017121792, -0.3207662, -0.0010261536)
 sprite_frames = SubResource("SpriteFrames_6ho2w")
 frame_progress = 0.75957716
