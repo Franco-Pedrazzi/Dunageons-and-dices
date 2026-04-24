@@ -22,6 +22,9 @@ animations = [{
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6eagr"]
 height = 2.76319
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5o54v"]
+size = Vector3(0.43237305, 1.9732742, 1.9406586)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qndo4"]
 atlas = ExtResource("2_5o54v")
 region = Rect2(768, 64, 640, 640)
@@ -40,6 +43,16 @@ animations = [{
 [node name="Player_1" type="CharacterBody3D" unique_id=1854145944 groups=["Character", "Player"]]
 collision_layer = 3
 script = ExtResource("1_6eagr")
+FOR = null
+DES = null
+CON = null
+INT = null
+SAB = null
+CAR = null
+clase = null
+raza = null
+exp = null
+lv = null
 
 [node name="body" type="AnimatedSprite3D" parent="." unique_id=1822754529]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.28111207, 0, 0)
@@ -49,6 +62,7 @@ autoplay = "Idle_front"
 frame_progress = 0.9087541
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1785798286]
+transform = Transform3D(0.5113262, 0, 0, 0, 1, 0, 0, 0, 0.47102582, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_6eagr")
 
 [node name="Player_1_hands" parent="." unique_id=1539047021 instance=ExtResource("1_1umfy")]
@@ -56,6 +70,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.490345, 0)
 
 [node name="Head" type="Node3D" parent="." unique_id=664633962]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.114, 0)
+
+[node name="mele_Attack_area" type="Area3D" parent="Head" unique_id=358473729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.114, 0)
+collision_layer = 0
+collision_mask = 14
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/mele_Attack_area" unique_id=58983463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028076172, 0.94548416, -1.0140305)
+shape = SubResource("BoxShape3D_5o54v")
+debug_color = Color(0.98592204, 0, 0.35566896, 0.41960785)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1335010816]
 

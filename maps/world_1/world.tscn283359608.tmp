@@ -34,7 +34,6 @@ animations = [{
 }]
 
 [node name="world" type="Node3D" unique_id=585450638]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1264358, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1708019096]
 environment = SubResource("Environment_rwms2")

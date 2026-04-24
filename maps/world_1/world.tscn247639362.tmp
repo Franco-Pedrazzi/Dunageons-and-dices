@@ -34,7 +34,6 @@ animations = [{
 }]
 
 [node name="world" type="Node3D" unique_id=585450638]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1264358, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1708019096]
 environment = SubResource("Environment_rwms2")
@@ -54,16 +53,6 @@ sprite_frames = SubResource("SpriteFrames_hwgqy")
 
 [node name="Player_1" parent="." unique_id=127817993 instance=ExtResource("1_ofrpk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5761584, 0)
-FOR = 16
-DES = 11
-CON = 14
-INT = 11
-SAB = 11
-CAR = 15
-clase = ""
-raza = "humano"
-exp = 0
-lv = 0
 
 [node name="Npc_1" parent="." unique_id=1313732846 instance=ExtResource("3_p5ctn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5707211, 0.5676658, -7.1267724)

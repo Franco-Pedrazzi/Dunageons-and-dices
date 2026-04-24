@@ -1,12 +1,11 @@
-extends CharacterBody3D
-var speed=10;
-var acelerate=1;
+extends Stats
 
 var Mouse_sens:float=0.5
 
 @onready var head=$Head
 
 func _ready() -> void:
+	stats_ready()
 	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
 func  _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -21,19 +20,19 @@ func _physics_process(delta: float) -> void:
 	var move_direction:Vector3=(transform.basis * Vector3(input_direction.x,0,-1*input_direction.y)).normalized()
 	
 	if not is_on_floor():
-		velocity.y=move_toward(velocity.y,-speed,acelerate)
+		velocity.y=move_toward(velocity.y,-VEL,VEL/10)
 	
 	if move_direction.z:
-		velocity.z=move_toward(velocity.z,speed*move_direction.z,acelerate)
+		velocity.z=move_toward(velocity.z,VEL*move_direction.z,VEL/10)
 	else:
-		velocity.z=move_toward(velocity.z,0,acelerate)
+		velocity.z=move_toward(velocity.z,0,VEL/10)
 		
 	if move_direction.x:
-		velocity.x=move_toward(velocity.x,speed*move_direction.x,acelerate)
+		velocity.x=move_toward(velocity.x,VEL*move_direction.x,VEL/10)
 	else:
-		velocity.x=move_toward(velocity.x,0,acelerate)
+		velocity.x=move_toward(velocity.x,0,VEL/10)
 		
 	if Input.is_action_pressed("jump") and is_on_floor():
-		velocity.y=speed
+		velocity.y=VEL
 
 	move_and_slide()
